@@ -14,7 +14,8 @@ jobs:
     - name: build
       uses: kdihalas/buildpack-action@master
       env:
-        PUBLISH: true
         IMAGE_NAME: kdihalas/knative-nodejs-example:latest
         BUILDER: cloudfoundry/cnb:bionic
         CONTEXT: nodejs
+    - name: push
+      run: docker push kdihalas/knative-nodejs-example:latest
