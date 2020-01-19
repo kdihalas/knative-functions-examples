@@ -17,3 +17,4 @@ jobs:
         PUBLISH: true
         IMAGE_NAME: kdihalas/knative-nodejs-example:latest
         BUILDER: cloudfoundry/cnb:bionic
+        CONTEXT: nodejs
