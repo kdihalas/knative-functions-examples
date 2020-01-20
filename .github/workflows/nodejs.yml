@@ -2,7 +2,7 @@ name: knative-nodejs
 on:
   push:
     paths:
-    - 'python/**'
+    - 'nodejs/**'
 
 jobs:
   build:
