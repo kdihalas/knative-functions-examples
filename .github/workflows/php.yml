@@ -1,0 +1,20 @@
+name: knative-go
+on:
+  push:
+    paths:
+    - 'php/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: docker-login
+      env:
+       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+    - name: build
+      run: docker build -t /github/workspace/$SOURCE_LOCATION kdihalas/knative-php-example:latest
+    - name: push
+      run: docker push kdihalas/knative-php-example:latest

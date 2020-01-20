@@ -1,0 +1,32 @@
+{
+  "listeners": {
+      "*:8080": {
+          "pass": "routes"
+      }
+
+  },
+  "routes": [
+    {
+      "match": {
+          "uri": "/"
+      },
+      "action": {
+          "pass": "applications/function_index"
+      }
+    },
+    {
+        "action": {
+            "share": "/www/assets"
+        }
+    }
+  ],
+  "applications": {
+      "function_index": {
+          "type": "php",
+          "user": "www-data",
+          "group": "www-data",
+          "root": "/www",
+          "script": "app.php"
+      }
+  }
+}

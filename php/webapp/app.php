@@ -1,6 +1,7 @@
 <?php
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
+use Slim\Exception\NotFoundException;
 use Slim\Factory\AppFactory;
 
 use Ramsey\Uuid\Uuid;
@@ -22,8 +23,7 @@ $app->get('/', function (Request $request, Response $response, $args) {
 	$payload = json_encode($data);
 
 	$response->getBody()->write($payload);
-	return $response
-	          ->withHeader('Content-Type', 'application/json');
+	return $response->withHeader('Content-Type', 'application/json');
 });
 
 $app->run();
