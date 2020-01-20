@@ -1,4 +1,4 @@
-name: knative-python
+name: knative-nodejs
 on:
   push:
     paths:
