@@ -4,6 +4,7 @@
           "pass": "applications/function_index"
       }
   },
+  
   "applications": {
       "function_index": {
           "type": "external",
