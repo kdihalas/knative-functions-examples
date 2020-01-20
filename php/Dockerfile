@@ -1,6 +1,6 @@
 FROM composer:latest as builder
 WORKDIR /www
-COPY ./webapp/* /www/
+COPY ./function/* /www/
 RUN composer install
 
 FROM nginx/unit:1.14.0-php7.3
