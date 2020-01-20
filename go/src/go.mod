@@ -14,4 +14,5 @@ require (
 	golang.org/x/sys v0.0.0-20200117145432-59e60aa80a0c // indirect
 	gopkg.in/go-playground/validator.v9 v9.31.0 // indirect
 	gopkg.in/yaml.v2 v2.2.7 // indirect
+	unit.nginx.org v0.0.0-20191226145304-caa4c02ba5e5 // indirect
 )

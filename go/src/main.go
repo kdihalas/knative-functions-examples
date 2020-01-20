@@ -4,6 +4,7 @@ import (
   "github.com/gin-gonic/gin"
   "github.com/satori/go.uuid"
   "fmt"
+  "unit.nginx.org/go"
 )
 
 func main() {
@@ -17,5 +18,5 @@ func main() {
       "uuidv4": fmt.Sprintf("%s", u4),
     })
   })
-  r.Run()
+  fmt.Errorf("%s", unit.ListenAndServe(":8000", r))
 }

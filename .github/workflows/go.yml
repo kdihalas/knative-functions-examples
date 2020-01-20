@@ -15,10 +15,6 @@ jobs:
        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - name: build
-      uses: kdihalas/buildpack-action@master
-      env:
-        IMAGE_NAME: kdihalas/knative-go-example:latest
-        BUILDER: cloudfoundry/cnb:bionic
-        CONTEXT: go
+      run: docker build ./php/ -t kdihalas/knative-go-example:latest
     - name: push
       run: docker push kdihalas/knative-go-example:latest
