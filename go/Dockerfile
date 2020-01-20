@@ -7,7 +7,7 @@ RUN curl -sL https://nginx.org/keys/nginx_signing.key | apt-key add - \
 
 WORKDIR /function
 
-COPY src/* /function/
+COPY function/* /function/
 RUN go get \
     && go build -o func *.go
 

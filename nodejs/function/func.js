@@ -1,3 +1,13 @@
+#!/usr/bin/env node
+const {
+  createServer,
+  IncomingMessage,
+  ServerResponse,
+} = require('unit-http')
+
+require('http').ServerResponse = ServerResponse
+require('http').IncomingMessage = IncomingMessage
+
 const express = require('express');
 const morgan = require('morgan');
 const uuidv1 = require('uuid/v1');
@@ -14,7 +24,4 @@ app.get('/', (req, res) => {
   });
 });
 
-const port = process.env.PORT || 8080;
-app.listen(port, () => {
-  console.log('uuid-generator listening on port', port);
-});
+createServer(app).listen()
