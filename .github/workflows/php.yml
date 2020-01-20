@@ -1,4 +1,4 @@
-name: knative-go
+name: knative-php
 on:
   push:
     paths:
@@ -15,6 +15,6 @@ jobs:
        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - name: build
-      run: docker build -t /github/workspace/$SOURCE_LOCATION kdihalas/knative-php-example:latest
+      run: docker build /github/workspace/$SOURCE_LOCATION -t kdihalas/knative-php-example:latest
     - name: push
       run: docker push kdihalas/knative-php-example:latest
