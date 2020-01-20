@@ -1,4 +1,4 @@
-name: knative-nodejs
+name: knative-go
 on: [push]
 
 jobs:
