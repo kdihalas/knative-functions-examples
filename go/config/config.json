@@ -3,7 +3,6 @@
       "*:8080": {
           "pass": "applications/function_index"
       }
-
   },
   "applications": {
       "function_index": {
