@@ -1,0 +1,11 @@
+---
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: uuid-generator-nodejs
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+        - image: kdihalas/knative-nodejs-example:latest

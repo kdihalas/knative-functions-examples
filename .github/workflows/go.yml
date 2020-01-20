@@ -1,0 +1,21 @@
+name: knative-nodejs
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: docker-login
+      env:
+       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+    - name: build
+      uses: kdihalas/buildpack-action@master
+      env:
+        IMAGE_NAME: kdihalas/knative-go-example:latest
+        BUILDER: cloudfoundry/cnb:bionic
+        CONTEXT: go
+    - name: push
+      run: docker push kdihalas/knative-go-example:latest

@@ -10,7 +10,7 @@ app.use(morgan('combined'))
 app.get('/', (req, res) => {
   res.json({
     uuidv1: uuidv1(),
-    uuidv3: uuidv4(),
+    uuidv4: uuidv4(),
   });
 });
 
