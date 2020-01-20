@@ -1,0 +1,17 @@
+{
+    "listeners": {
+        "*:8080": {
+            "pass": "applications/function"
+        }
+    },
+
+    "applications": {
+        "function": {
+            "type": "python 3",
+            "processes": 1,
+            "path": "/home/flask/function/",
+            "home": "/home/flask/venv/",
+            "module": "function"
+        }
+    }
+}

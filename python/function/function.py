@@ -7,3 +7,5 @@ app = Flask(__name__)
 def index():
     return jsonify({'uuidv1': uuid.uuid1(),
                     'uuidv4': uuid.uuid4()})
+
+application = app
