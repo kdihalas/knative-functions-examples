@@ -1,5 +1,8 @@
 name: knative-nodejs
-on: [push]
+on:
+  push:
+    paths:
+    - 'nodejs/**'
 
 jobs:
   build:

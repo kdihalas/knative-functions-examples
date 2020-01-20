@@ -1,5 +1,8 @@
 name: knative-go
-on: [push]
+on:
+  push:
+    paths:
+    - 'go/**'
 
 jobs:
   build:
